@@ -1,9 +1,10 @@
 import React from 'react';
-import {SafeAreaView, SectionList, StyleSheet, Text} from 'react-native';
+import {View, SafeAreaView, SectionList, StyleSheet, Text} from 'react-native';
 import SectionA from './sectionA';
 import SectionB from './sectionB';
 import SectionC from './sectionC';
 import StickyFooter from './footer';
+import TopNavigation from '../../components/TopNavigation';
 
 type Props = {};
 
@@ -20,18 +21,35 @@ const SECTIONS = [
     title: 'Section C Header',
     data: [<SectionC />],
   },
+  {
+    title: 'Section C Header',
+    data: [<SectionC />],
+  },
+  {
+    title: 'Section C Header',
+    data: [<SectionC />],
+  },
+  {
+    title: 'Section C Header',
+    data: [<SectionC />],
+  },
+  {
+    title: 'Section C Header',
+    data: [<SectionC />],
+  },
 ];
 
 const PDPLite: React.FC = (props: Props) => {
   return (
-    <SafeAreaView style={styles.screen}>
+    <View style={styles.screen}>
+      <TopNavigation />
       <SectionList
         sections={SECTIONS}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) => item}
       />
       <StickyFooter />
-    </SafeAreaView>
+    </View>
   );
 };
 
